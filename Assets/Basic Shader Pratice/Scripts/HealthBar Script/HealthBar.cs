@@ -1,4 +1,6 @@
 using DG.Tweening;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +17,7 @@ public class HealthBar : MonoBehaviour
     {
         currentHealth = maxHealth;
     }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -32,6 +35,10 @@ public class HealthBar : MonoBehaviour
         _fillImgSequence.Append(healthbarFillImg.DOFillAmount(ratio, 0.25f)).SetEase(Ease.InOutSine);
         _fillImgSequence.AppendInterval(trailDelay);
         _fillImgSequence.Append(healthbarTraillingFillImage.DOFillAmount(ratio, 0.3f)).SetEase(Ease.InOutSine);
-        _fillImgSequence.Play();    
+        _fillImgSequence.Play();
     }
+
+
+
 }
+
